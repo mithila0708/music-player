@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Music Player UI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="player">
+
+    <!-- Radio buttons for song selection -->
+    <input type="radio" name="song" id="song1" checked>
+    <input type="radio" name="song" id="song2">
+    <input type="radio" name="song" id="song3">
+
+    <!-- Album Art -->
+    <div class="album-art"></div>
+
+    <!-- Song Info -->
+    <h2 class="song"></h2>
+    <p class="artist"></p>
+
+    <!-- Fake Progress Bar -->
+    <div class="progress">
+        <div class="progress-bar"></div>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+        <label for="song1">⏮</label>
+
+        <!-- Play/Pause -->
+        <input type="checkbox" id="play">
+        <label for="play" class="play-btn"></label>
+
+        <label for="song2">⏭</label>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+

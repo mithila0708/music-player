@@ -1,0 +1,131 @@
+*body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1e1e1e, #121212);
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+}
+
+.player {
+    background: #222;
+    border-radius: 30px;
+    width: 450px;       /* bigger frame */
+    padding: 40px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.6);
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+/* Album Art */
+.album-art {
+    width: 300px;       /* bigger album */
+    height: 300px;
+    margin: 0 auto 25px;
+    border-radius: 25px;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    transition: transform 0.5s;
+}
+.album-art:hover {
+    transform: scale(1.05);
+}
+
+/* Song Info */
+.song {
+    font-size: 1.8rem;     /* bigger text */
+    margin: 10px 0 5px;
+}
+.artist {
+    font-size: 1.2rem;
+    color: #aaa;
+    margin: 0 0 20px;
+}
+
+/* Progress Bar */
+.progress {
+    background: #555;
+    height: 8px;           /* bigger progress bar */
+    width: 100%;
+    border-radius: 8px;
+    margin: 20px 0 30px;
+    overflow: hidden;
+}
+.progress-bar {
+    background: #1db954;
+    height: 100%;
+    width: 60%; /* static demo */
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;  /* more space between buttons */
+}
+.controls label {
+    background: #444;
+    border-radius: 50%;
+    width: 70px;   /* bigger buttons */
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 2rem;
+    transition: all 0.3s;
+}
+.controls label:hover {
+    background: #666;
+    transform: scale(1.2);
+}
+
+/* Play button */
+.play-btn {
+    width: 80px;
+    height: 80px;
+    background: #1db954;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+}
+.play-btn::before {
+    content: "▶";
+    color: white;
+    font-size: 2.2rem;
+    position: absolute;
+    left: 28px;
+    top: 22px;
+}
+#play:checked + .play-btn::before {
+    content: "⏸";
+}
+
+/* Hide radio buttons and play checkbox */
+input[type="radio"], #play {
+    display: none;
+}
+
+/* Song selection using CSS */
+#song1:checked ~ .album-art { background-image: url('https://picsum.photos/id/237/400/400'); }
+#song1:checked ~ .song::after { content: "Perfect"; }
+#song1:checked ~ .artist::after { content: "Ed Sheeran"; }
+
+#song2:checked ~ .album-art { background-image: url('https://picsum.photos/id/238/400/400'); }
+#song2:checked ~ .song::after { content: "Song 2"; }
+#song2:checked ~ .artist::after { content: "Artist 2"; }
+
+#song3:checked ~ .album-art { background-image: url('https://picsum.photos/id/239/400/400'); }
+#song3:checked ~ .song::after { content: "Song 3"; }
+#song3:checked ~ .artist::after { content: "Artist 3"; }
+
+/* Make song text appear */
+.song::after, .artist::after {
+    content: '';
+    display: block;
+}
+
